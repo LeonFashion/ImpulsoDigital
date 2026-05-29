@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -13,6 +12,8 @@ body {
 header {
   background: #000000;
   color: white;
+  position: relative;
+  z-index: 1000;
 }
 
 nav {
@@ -20,32 +21,59 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
 }
 
 .logo {
   color: white;
   text-decoration: none;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 800;
   letter-spacing: 0.5px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
+.logo span {
+  color: #00c2ff;
 }
 
-.nav-links a {
+.menu-toggle {
+  background: #00c2ff;
+  color: #000000;
+  border: none;
+  font-size: 28px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 78px;
+  right: 8%;
+  background: #000000;
+  border: 2px solid #00c2ff;
+  border-radius: 18px;
+  padding: 22px 34px;
+  min-width: 240px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.nav-menu a {
+  display: block;
   color: white;
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 16px 0;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-menu a:hover {
+  color: #00c2ff;
+}
+
+.show-menu {
+  display: block;
 }
 
 .hero {
@@ -79,18 +107,18 @@ nav {
 
 .btn {
   display: inline-block;
-  background: #000000;
-  color: white;
+  background: #00c2ff;
+  color: #000000;
   padding: 16px 30px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 800;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn:hover {
-  background: #333333;
+  background: #00a6d6;
   transform: translateY(-2px);
 }
 
@@ -124,16 +152,17 @@ nav {
 
 .card {
   background: white;
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 36px 30px;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-top: 6px solid #00c2ff;
 }
 
 .card i {
   font-size: 42px;
   margin-bottom: 18px;
-  color: #000000;
+  color: #00c2ff;
 }
 
 .card h3 {
@@ -157,21 +186,22 @@ nav {
 .step {
   background: white;
   padding: 34px 24px;
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-top: 6px solid #00c2ff;
 }
 
 .step span {
   width: 52px;
   height: 52px;
-  background: #000000;
-  color: white;
+  background: #00c2ff;
+  color: #000000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 16px;
 }
 
@@ -209,7 +239,7 @@ nav {
 }
 
 .white-btn:hover {
-  background: #e6e6e6;
+  background: #00c2ff;
 }
 
 footer {
@@ -225,7 +255,7 @@ footer p {
 }
 
 footer a {
-  color: white;
+  color: #00c2ff;
   text-decoration: none;
 }
 
@@ -237,6 +267,10 @@ footer a {
   color: white;
   font-size: 28px;
   margin: 0 12px;
+}
+
+.footer-socials a:hover {
+  color: #00c2ff;
 }
 
 .floating-whatsapp {
@@ -262,14 +296,19 @@ footer a {
 }
 
 @media (max-width: 800px) {
-
   nav {
-    flex-direction: column;
-    text-align: center;
+    padding: 18px 6%;
   }
 
-  .nav-links {
-    justify-content: center;
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-menu {
+    top: 72px;
+    right: 6%;
+    left: 6%;
+    min-width: auto;
   }
 
   .hero {
@@ -299,5 +338,4 @@ footer a {
   .step {
     padding: 30px 22px;
   }
-
 }
